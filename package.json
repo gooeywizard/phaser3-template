@@ -6,8 +6,10 @@
   "main": "electron/electron-main.js",
   "scripts": {
     "build-electron": "webpack --config webpack/webpack-electron.js",
-		"start-electron": "npm run build-electron && electron .",
-    "build-prod": "webpack --config webpack/webpack-prod.js",
+    "start-electron-dev-part1": "webpack --watch --config webpack/webpack-electron.js",
+    "start-electron-dev-part2": "electron .",
+    "start-electron-dev": "npm-run-all --parallel start-electron-dev-part1 start-electron-dev-part2",
+    "build": "webpack --config webpack/webpack-prod.js",
     "start-dev": "webpack-dev-server --config webpack/webpack-base.js --open"
   },
   "repository": {
@@ -32,9 +34,11 @@
     "electron": "^5.0.8",
     "file-loader": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.5",
     "script-ext-html-webpack-plugin": "^2.1.4",
     "webpack": "^4.37.0",
     "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   }
 }

@@ -1,6 +1,2 @@
-# phaser3-electron-template
+# phaser3-template
 
-## To run it:
-
-npm install
-npm run start
